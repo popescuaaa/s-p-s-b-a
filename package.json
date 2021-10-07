@@ -1,0 +1,23 @@
+{
+  "name": "ideal-broccoli",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/popescuaaa/ideal-broccoli.git",
+  "author": "Popescu Andrei <andreigabrielpopescu556@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "main": "./node_modules/ts-node/dist/bin.js index.ts",
+    "test": "jest --verbose .",
+    "coverage": "jest --verbose --coverage ."
+  },
+  "dependencies": {
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.10.2",
+    "jest": "^27.2.4",
+    "ts-jest": "^27.0.5"
+  }
+}
