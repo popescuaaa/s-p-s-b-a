@@ -5,4 +5,5 @@ export interface Auction {
   auctionName: string;
   buyers: Buyer[];
   expectedResult: Result;
+  reservedPrice: number;
 }
