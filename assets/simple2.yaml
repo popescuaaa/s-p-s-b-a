@@ -1,0 +1,25 @@
+auctionName: 'As in example so in this...'
+expectedResult:
+  name: 'B'
+  bid: 140
+reservedPrice: 100
+buyers:
+  0:
+    name: 'A'
+    bids: [ 110, 130 ]
+
+  1:
+    name: 'B'
+    bids: [ 145, 150 ]
+
+  2:
+    name: 'C'
+    bids: [ 125 ]
+
+  3:
+    name: 'D'
+    bids: [ 105, 115, 90 ]
+
+  4:
+    name: 'E'
+    bids: [ 132, 135, 140 ]

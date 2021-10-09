@@ -1,0 +1,5 @@
+auxctionName: 'Empty Room'
+expctedResult:
+  name: None
+  bid: None
+reservedPrice: 100

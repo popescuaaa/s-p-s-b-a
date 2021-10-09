@@ -1,0 +1,33 @@
+auctionName: 'speedy'
+expectedResult:
+  name: 'G'
+  bid: 475
+reservedPrice: 67
+buyers:
+0:
+  name: 'A'
+  bids: [ 100 ]
+
+1:
+  name: 'B'
+  bids: [ 200 ]
+
+2:
+  name: 'C'
+  bids: [ 300 ]
+
+3:
+  name: 'D'
+  bids: [ 400 ]
+
+4:
+  name: 'E'
+  bids: [ 450 ]
+
+5:
+  name: 'F'
+  bids: [ 475 ]
+
+6:
+  name: 'G'
+  bids: [ 500 ]

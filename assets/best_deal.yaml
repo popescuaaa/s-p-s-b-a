@@ -1,0 +1,17 @@
+auctionName: 'best deal'
+expectedResult:
+  name: 'B'
+  bid: 100
+reservedPrice: 100
+buyers:
+  0:
+    name: 'A'
+    bids: [ 100 ]
+
+  1:
+    name: 'B'
+    bids: [ 185, 90 ]
+
+  2:
+    name: 'C'
+    bids: [ 125 ]

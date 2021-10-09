@@ -1,0 +1,33 @@
+auctionName: 'Losers'
+expectedResult:
+  name: None
+  bid: None
+reservedPrice: 100
+buyers:
+1:
+  name: 'A'
+  bids: []
+
+2:
+  name: 'B'
+  bids: []
+
+3:
+  name: 'C'
+  bids: []
+
+4:
+  name: 'D'
+  bids: []
+
+5:
+  name: 'E'
+  bids: []
+
+6:
+  name: 'F'
+  bids: []
+
+7:
+  name: 'G'
+  bids: []

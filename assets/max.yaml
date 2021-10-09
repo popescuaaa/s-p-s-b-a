@@ -1,0 +1,26 @@
+auctionName: 'Max is Max'
+expectedResult:
+  name: 'B'
+  bid: 115
+reserved_price: 100
+buyers:
+  0:
+    name: 'A'
+    bids: [ 20, 30 ]
+
+  1:
+    name: 'B'
+    bids: [ 115, 90 ]
+
+  2:
+    name: 'C'
+    bids: [ 14 ]
+
+  3:
+    name: 'D'
+    bids: [ 20, 15, 12 ]
+
+  4:
+    name: 'E'
+    bids: [ 89, 79, 59 ]
+
