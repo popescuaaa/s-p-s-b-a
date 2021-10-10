@@ -47,11 +47,14 @@ class Dynamic implements Solver {
     }
 
     if (_winner.winningBid === 0 && _winner.winningBidBuyerName === "") {
-      _winner.winningBid = _winner.bid;
+      /* Reduce the winning price to the reserved one */
+      _winner.winningBid = reservedPrice;
       _winner.winningBidBuyerName = _winner.name;
     }
 
     if (_winner.concurrentBids > 1 || _winner.name === "") return EmptyResult;
+
+    console.log("The winner is", _winner);
 
     return <Result>{
       name: _winner.name,

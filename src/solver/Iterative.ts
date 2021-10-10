@@ -13,21 +13,31 @@ class Iterative implements Solver {
       (buyer) =>
         <MaxBidBuyer>{
           name: buyer.name,
-          bid: Math.max(...buyer.bids),
+          bid: buyer.bids.length !== 0 ? Math.max(...buyer.bids) : -1,
         }
     );
 
-    /* Sort bid in descending order */
+    /* Sort bid in descending order using TimSort */
     TimSort.sort(
       maxBidsBuyers,
       (mx0: MaxBidBuyer, mx1: MaxBidBuyer) => mx1.bid - mx0.bid
     );
 
+    /* Empty result check for the specified case the max is -1*/
+    if (maxBidsBuyers[0].bid === -1) {
+      return EmptyResult;
+    }
+
+    /* There are at least two buyers who listed the same bid in current Auction */
+    if (maxBidsBuyers[0].bid === maxBidsBuyers[1].bid) {
+      return EmptyResult;
+    }
+
     return {
       name: maxBidsBuyers[0].name,
       bid:
-        maxBidsBuyers[1].bid < reservedPrice
-          ? maxBidsBuyers[0].bid
+        maxBidsBuyers[1].bid <= reservedPrice
+          ? reservedPrice
           : maxBidsBuyers[1].bid,
     };
   }
