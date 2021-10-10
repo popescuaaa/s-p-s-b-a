@@ -54,8 +54,6 @@ class Dynamic implements Solver {
 
     if (_winner.concurrentBids > 1 || _winner.name === "") return EmptyResult;
 
-    console.log("The winner is", _winner);
-
     return <Result>{
       name: _winner.name,
       bid: _winner.winningBid,
