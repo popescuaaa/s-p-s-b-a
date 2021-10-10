@@ -1,6 +1,6 @@
 import { Buyer } from "../models/Buyer";
-import { EmptyResult, Result } from "../models/Result";
+import { Result } from "../models/Result";
 
 export interface Solver {
-  solve(buyers: Buyer[], reservedPrice: number): Result | EmptyResult;
+  solve(buyers: Buyer[], reservedPrice: number): Result;
 }

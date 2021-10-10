@@ -2,11 +2,7 @@ import { Solver } from "./Solver";
 import { Buyer, MaxBidBuyer } from "../models/Buyer";
 import { Result } from "../models/Result";
 import * as TimSort from "timsort";
-
-const EmptyResult: Result = {
-  name: "",
-  bid: -1,
-};
+import { EmptyResult } from "./Helpers";
 
 class Iterative implements Solver {
   solve(buyers: Buyer[], reservedPrice: number): Result {
@@ -26,8 +22,6 @@ class Iterative implements Solver {
       maxBidsBuyers,
       (mx0: MaxBidBuyer, mx1: MaxBidBuyer) => mx1.bid - mx0.bid
     );
-
-    console.log(maxBidsBuyers);
 
     return {
       name: maxBidsBuyers[0].name,
