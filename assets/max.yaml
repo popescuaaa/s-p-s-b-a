@@ -1,8 +1,8 @@
 auctionName: 'Max is Max'
 expectedResult:
   name: 'B'
-  bid: 115
-reserved_price: 100
+  bid: 100
+reservedPrice: 100
 buyers:
   0:
     name: 'A'

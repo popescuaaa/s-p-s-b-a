@@ -1,7 +1,7 @@
 auctionName: 'Great minds think alike...'
 expectedResult:
-  name: 'D'
-  bid: 130
+  name: ''
+  bid: -1
 reservedPrice: 100
 buyers:
   0:

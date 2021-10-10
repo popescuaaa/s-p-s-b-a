@@ -1,7 +1,7 @@
 auctionName: 'Losers'
 expectedResult:
   name: ""
-  bid: 0
+  bid: -1
 reservedPrice: 100
 buyers:
   1:

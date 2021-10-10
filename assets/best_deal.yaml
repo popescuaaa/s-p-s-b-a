@@ -1,7 +1,7 @@
-auctionName: 'best deal'
+auctionName: 'Best Deal'
 expectedResult:
   name: 'B'
-  bid: 100
+  bid: 125
 reservedPrice: 100
 buyers:
   0:

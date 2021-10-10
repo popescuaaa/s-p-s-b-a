@@ -1,5 +1,6 @@
-auxctionName: 'Empty Room'
-expctedResult:
+auctionName: 'Empty Room'
+expectedResult:
   name: ""
-  bid: 0
+  bid: -1
 reservedPrice: 100
+buyers: []
