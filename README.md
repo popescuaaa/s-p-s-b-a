@@ -3,8 +3,8 @@
 ## Solution
 
 This type of auction system can be solved in two different ways: state based transition and global
-solution style. In the state based transition we can condisier that in each round there is a potential
-winner W and a potential winning price WP and we can make a transit from state to state comparing our
+solution style. In the state based transition we can consider that in each round there is a potential
+winner W and a potential winning price WP, and we can make a transit from state to state comparing our
 result with previous state result as in a dynamic programming approach. In the opposite corner, the global
 solution is based on all the info and computer the result by simply take the maximum bidder and second maximum
 bid. More explanations on algorithms bellow.
@@ -24,21 +24,25 @@ E: 3 bids of 132, 135 and 140 euros
 
 The buyer E wins the auction at the price of 130 euros.
 
+## Approaches:
+----
 Global based solution is a static algorithm in witch we take the max from each potential buyers and then
-computer the winning score as the second largest score in the list, if this one si higher than the reserved price,
+computer the winning score as the second-largest score in the list, if this one si higher than the reserved price,
 otherwise the highest price. In the case of witch no buyer has a good price the 'game' has no solution.
 
 - Take the max from each potential buyer: memory = [ (A, 130), (B, -1000), (C, 125), (D, 115), (E, 140) ]
-
-- Sort in decending order: memory = sorted(memory) = [ (E, 140), (A, 130), (C, 125), (D, 115), (B, -1000) ]
-
+- Sort in descending order: memory = sorted(memory) = [ (E, 140), (A, 130), (C, 125), (D, 115), (B, -1000) ]
+   - Note: Regarding the sorting problem, in this case, because we speak of a Node.js based implementation
+     the standard solution would be to use the basic array sort provided method, but there are sort 
+     implementations that consistently beat the stock .sort (V8 at least), node-timsort being one of them.
+     
 - Winner: highest price -> E
 - Winning price: second highest if this is higher than reserved price, otherwise winner's price: 130 from A
 
 ---
 
 State based transition is a dynamic programming algorithm. The overall 'game' can be represented as a matrix in
-which the columns represents the rounds:
+which the columns represent the rounds:
 | Buyer | Initial state - State 0 |  State 1 | State 2 |
 |---|---|---|---|
 | A | 110  | 130  | * |
@@ -47,21 +51,20 @@ which the columns represents the rounds:
 | D | 105 | 115 | 90 |
 | E | 132 | 135 | 140|
 
-In each round we decinde the winner: the buyer with the highest price and the winnig price from the logic above.
+In each round we decide the winner: the buyer with the highest price and the winnig price from the logic above.
 At each round, we compare the current potential winner with the potential winner from the early round and make
 a decision based on their performance to keep the winning bid always first.
 
 0) E wins with C bid: 125
 1) E wins with A bid: 130 -> compare with previous state solution
    => E ~ E (same winner) -> take the bigger bid from those different that E
-   => (A, C) != E so we take max from them: (A, 130)
-2) E wins with E bid: 140 but we heve the previous round solution
+   => (A, C) != E, so we take max from them: (A, 130)
+2) E wins with E bid: 140 but we have the previous round solution
    => we take max from (A, -) as E can't take its own bid if there are another available
 
 Solution: E: 130
 
 ## Testing
-### Testcases
 The tests are focused on different scenarios like the one in example to no buyers
 and even speedy like games where all potential buyers bid only one round with high amounts.
 I personally prefer the global based solution as it is more clean in implementation, but
@@ -71,8 +74,39 @@ For more details about the tests take a look on _assets_ folder
 
 
 
-# Documentation
+## Documentation
 
 [Nash equilibrium applied in this problem](https://homepages.cwi.nl/~apt/stra/ch7.pdf)
 
 [Ebay auction](https://web.stanford.edu/~alroth/papers/eBay.ai.pdf)
+
+
+## Project structure 
+ - LICENSE 
+ - README.md
+ - assets # A variety of test that I have used to test the application
+   - best_deal.yaml 
+   - concurrent.yaml
+   - empty_room.yaml
+   - losers.yaml
+   - max.yaml 
+   - simple.yaml 
+   - simple2.yaml 
+   - speedy.yaml 
+ - index.ts # main entry (used as playground to test different aspects of the application)
+ - src
+   - models 
+     - Auction.ts
+     - Buyer.ts
+     - Result.ts
+   - solver
+     - Dynamic.ts
+     - Helpers.ts
+     - Iterative.ts
+     - Solver.ts
+     - system_utility
+       - DataReader.ts
+   - tests
+     - solver
+       - Dynamic.test.ts
+       - Iterative.test.ts
