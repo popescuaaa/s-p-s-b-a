@@ -1,5 +1,5 @@
 auxctionName: 'Empty Room'
 expctedResult:
-  name: None
-  bid: None
+  name: ""
+  bid: 0
 reservedPrice: 100

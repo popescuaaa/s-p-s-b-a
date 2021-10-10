@@ -1,7 +1,7 @@
 auctionName: 'example'
 expectedResult:
   name: 'E'
-  bid: 130
+  bid: 135
 reservedPrice: 100
 buyers:
   0:

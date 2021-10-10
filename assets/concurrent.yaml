@@ -1,0 +1,25 @@
+auctionName: 'Great minds think alike...'
+expectedResult:
+  name: 'D'
+  bid: 130
+reservedPrice: 100
+buyers:
+  0:
+    name: 'A'
+    bids: [ 110, 130 ]
+
+  1:
+    name: 'B'
+    bids: []
+
+  2:
+    name: 'C'
+    bids: [ 125 ]
+
+  3:
+    name: 'D'
+    bids: [ 105, 115, 140 ]
+
+  4:
+    name: 'E'
+    bids: [ 132, 135, 140 ]
