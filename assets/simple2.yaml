@@ -10,7 +10,7 @@ buyers:
 
   1:
     name: 'B'
-    bids: [ 145, 150 ]
+    bids: [ 145, 150, 150 ]
 
   2:
     name: 'C'
